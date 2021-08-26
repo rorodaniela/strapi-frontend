@@ -1,0 +1,40 @@
+{
+  "name": "strapi-starter-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "develop": "next dev",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "next build && next export",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "aos": "^2.3.4",
+    "clsx": "^1.1.1",
+    "moment": "^2.24.0",
+    "next": "^11.0.0",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-markdown": "^4.2.2",
+    "react-moment": "^0.9.6",
+    "react-redux": "^7.2.4",
+    "react-spring": "^9.2.4",
+    "react-static-google-map": "^0.8.0",
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1"
+  }
+}
