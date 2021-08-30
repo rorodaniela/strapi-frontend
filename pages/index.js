@@ -34,9 +34,11 @@ const Home = ({ global, homepage, founders }) => {
     landingPlane,
     logo
   }
+  const seo = {...homepage.ceo, siteName:"Wright Partners"}
+  console.log(homepage, "<<<");
   return (
     <Box className={classes.root}>
-      <Seo seo={homepage?.seo} />
+      <Seo seo={seo} />
       <Nav categories={menu} logo={logo}/>
       <Dashboard homepage={homepage} image={image} founders={founders} />
       <Footer categories={menu} logo={logo}/>

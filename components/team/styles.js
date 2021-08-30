@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   background: {
     position: "relative",
     backgroundSize: "cover",
+    filter: "grayscale(200%)",
     [theme.breakpoints.up("xl")]: {
       top: "-10.5vh",
       left: "-4rem",
@@ -336,7 +337,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "29px",
       fontWeight: "700",
       marginLeft: "5%",
-      marginBottom: "1rem",
+      marginBottom: "-1rem",
       textAlign: "center",
     },
     [theme.breakpoints.only("sm")]: {
@@ -393,13 +394,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     [theme.breakpoints.up("xl")]: {
-      top: "-60vh",
+      top: "-59vh",
     },
     [theme.breakpoints.only("lg")]: {
       top: "-108vh",
     },
     [theme.breakpoints.only("md")]: {
-      top: "-98vh",
+      top: "-100vh",
       left: "-1vw",
     },
     [theme.breakpoints.only("sm")]: {
@@ -593,7 +594,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-between",
       paddingInline: "1rem",
       width: "285px",
-      height: "450px",
+      height: "430px",
     },
     [theme.breakpoints.only("md")]: {
       display: "flex",

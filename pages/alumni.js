@@ -7,6 +7,7 @@ import Nav from "../components/nav"
 import Footer from "../components/footer"
 import Content from "../components/alumni"
 import menu from "../lib/collection/menu"
+import Seo from "../components/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,9 +28,14 @@ const Alumni = ({
     logo: getStrapiMedia(global?.logo),
     background: getStrapiMedia(alumniPage?.background),
   }
+  const seo = {
+    siteName: "Alumni",
+    metaTitle: "Wright - Partners",
+  }
 
   return (
     <Box className={classes.root}>
+      <Seo seo={seo} />
       <Nav categories={menu} logo={image.logo} />
       <Content
         alumniPage={alumniPage}

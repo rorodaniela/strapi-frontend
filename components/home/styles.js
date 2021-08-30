@@ -7,18 +7,6 @@ const useStyles = makeStyles((theme) => ({
   hompage: {
     background: "rgb(41,41,41)",
     height: "100%",
-    // [theme.breakpoints.up("lg")]: {
-    //   paddingBottom: "70rem",
-    // },
-    // [theme.breakpoints.only("md")]: {
-    //   paddingBottom: "50rem",
-    // },
-    // [theme.breakpoints.only("sm")]: {
-    //   paddingBottom: "120rem",
-    // },
-    // [theme.breakpoints.down("xs")]: {
-    //   paddingBottom: "120rem",
-    // },
   },
   background: {
     height: "100vh",
@@ -195,11 +183,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(162,31,7,0.4)",
     [theme.breakpoints.up("xl")]: {
       display: "none",
-      // top: 5,
-      // right: "-85%",
-      // zIndex: 1,
-      // width: "5rem",
-      // height: "40vh",
     },
     [theme.breakpoints.only("lg")]: {
       top: 5,
@@ -217,11 +200,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       display: "none",
-      // top: 5,
-      // right: "-85%",
-      // zIndex: 1,
-      // width: "5rem",
-      // height: "40vh",
     },
   },
   image2: {
@@ -229,9 +207,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("xl")]: {
       height: "70vh",
       top: "12%",
-      right: "-36%",
-      width: "32vw",
-      height: "74vh",
+      right: "-50%",
+      width: "25vw",
+      height: "55vh",
     },
     [theme.breakpoints.only("lg")]: {
       height: "85vh",
@@ -253,10 +231,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       display: "none",
-      // height: "90vh",
-      // top: "-25%",
-      // right: "-10%",
-      // width: "45vw",
     },
   },
   boxTitle2: {
@@ -450,6 +424,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title3: {
     fontFamily: ["Poppins", "sans-serif"],
+    color: "rgb(200,0,26)",
     [theme.breakpoints.up("xl")]: {
       fontSize: "48px",
       fontWeight: "700",
@@ -548,7 +523,7 @@ const useStyles = makeStyles((theme) => ({
       top: "10vh",
       right: "-20%",
       width: "80vw",
-      height: "100vh",
+      height: "90vh",
     },
     [theme.breakpoints.only("lg")]: {
       top: "-15vh",
@@ -578,7 +553,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     [theme.breakpoints.up("xl")]: {
       top: "-60%",
-      marginLeft: "40vw",
+      marginLeft: "45vw",
       width: "80%",
     },
     [theme.breakpoints.only("lg")]: {
@@ -606,6 +581,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title4: {
     fontFamily: ["Poppins", "sans-serif"],
+    color: "rgb(200,0,26)",
     [theme.breakpoints.up("xl")]: {
       fontSize: "48px",
       fontWeight: "900",
@@ -925,7 +901,7 @@ const useStyles = makeStyles((theme) => ({
   boxPartnerLeft: {
     [theme.breakpoints.up("xl")]: {
       position: "relative",
-      top: "-20vh",
+      top: "-17vh",
       left: "8vw",
       height: "20vh",
       padding: "2.5rem",
@@ -1067,7 +1043,7 @@ const useStyles = makeStyles((theme) => ({
       top: "-7vh",
       minHeight: "55vh",
       maxHeight: "100vh",
-      marginInline: "4rem",
+      marginInline: "3.5rem",
       marginBottom: "5rem",
     },
     [theme.breakpoints.only("lg")]: {
@@ -1224,10 +1200,46 @@ const useStyles = makeStyles((theme) => ({
       // height: "250px",
     },
   },
+  card: {
+    [theme.breakpoints.up("xl")]: {
+      // height: "603px",
+      // widht: "400px",
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: "column",
+    },
+    [theme.breakpoints.only("lg")]: {
+      marginTop: "0.5vh",
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: "column",
+    },
+    [theme.breakpoints.only("md")]: {
+      marginTop: "0.5vh",
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: "column",
+    },
+    [theme.breakpoints.only("sm")]: {
+      marginTop: "0.5vh",
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: "column",
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: "column",
+    },
+  },
   profilePict: {
-    [theme.breakpoints.up("lg")]: {
-      // width: "200px",
-      // height: "200px",
+    [theme.breakpoints.up("xl")]: {
+      // width: "420px",
+      // height: "340px",
+    },
+    [theme.breakpoints.only("lg")]: {
+      // width: "420px",
+      // height: "340px",
     },
     [theme.breakpoints.only("md")]: {
       // marginTop: "5vh",
@@ -1245,7 +1257,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxIcon: {
     display: "flex",
-    marginTop: "3rem",
+    // marginTop: "3rem",
   },
   // card: {
   //   display: "flex",

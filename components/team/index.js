@@ -32,13 +32,14 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
         className={classes.contentSection1}
       >
         <animated.div className={classes.orangeBox1} style={floatInFromLeft} />
-        <Box
+        {/* eslint-disable-next-line */}
+        <img
           data-aos="fade-right"
           data-aos-offset="500"
           data-aos-easing="easing-in-sine"
           data-aos-duration="1000"
           className={classes.background}
-          style={{ backgroundImage: `url(${image?.background})` }}
+          src={image?.background}
         />
         <animated.div className={classes.titleBox} style={floatInFromLeft}>
           <Typography className={classes.title1}>{team?.title1}</Typography>
@@ -68,6 +69,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
             data-aos-offset="500"
             data-aos-easing="easing-in-sine"
             data-aos-duration="1000"
+            data-aos-once="true"
           >
             <Typography className={classes.title2}>{team?.title2}</Typography>
           </Grid>
@@ -83,6 +85,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
             data-aos-offset="500"
             data-aos-easing="easing-in-sine"
             data-aos-duration="1000"
+            data-aos-once="true"
           >
             {founders?.map((person, idx) => {
               const pict = getStrapiMedia(person.picture)
@@ -111,26 +114,34 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   </Box>
                   <Box className={classes.boxIcon}>
                     <>
-                      {
-                        person?.socialMedia?.linkedIn ? (
-                          <Box style={{ marginRight: "2rem" }}>
-                            <IconButton onClick={() => window.open(person?.socialMedia?.linkedIn)}>
-                              <IconCustom name="linkedin" color="red" />
-                            </IconButton>
-                          </Box>
-                        ) : <></>
-                      }
+                      {person?.socialMedia?.linkedIn ? (
+                        <Box style={{ marginRight: "2rem" }}>
+                          <IconButton
+                            onClick={() =>
+                              window.open(person?.socialMedia?.linkedIn)
+                            }
+                          >
+                            <IconCustom name="linkedin" color="red" />
+                          </IconButton>
+                        </Box>
+                      ) : (
+                        <></>
+                      )}
                     </>
                     <>
-                      {
-                        person?.socialMedia?.twitter ? (
-                          <Box style={{ marginRight: "2rem" }}>
-                            <IconButton onClick={() => window.open(person?.socialMedia?.linkedIn)}>
-                              <IconCustom name="twitter" color="red" />
-                            </IconButton>
-                          </Box>
-                        ) : <></>
-                      }
+                      {person?.socialMedia?.twitter ? (
+                        <Box style={{ marginRight: "2rem" }}>
+                          <IconButton
+                            onClick={() =>
+                              window.open(person?.socialMedia?.linkedIn)
+                            }
+                          >
+                            <IconCustom name="twitter" color="red" />
+                          </IconButton>
+                        </Box>
+                      ) : (
+                        <></>
+                      )}
                     </>
                   </Box>
                 </Box>
@@ -180,7 +191,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
           data-aos-easing="easing-in-sine"
           data-aos-duration="1000"
         >
-          {venturePartners?.map((person,idx) => {
+          {venturePartners?.map((person, idx) => {
             const pict = getStrapiMedia(person.profpict)
             return (
               <Grid
@@ -210,7 +221,9 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.linkedIn ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton onClick={() => window.open(person?.sosmed?.linkedIn)}>
+                        <IconButton
+                          onClick={() => window.open(person?.sosmed?.linkedIn)}
+                        >
                           <IconCustom name="linkedin" color="red" />
                         </IconButton>
                       </Box>
@@ -221,7 +234,9 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.twitter ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton onClick={() => window.open(person?.sosmed?.twitter)}>
+                        <IconButton
+                          onClick={() => window.open(person?.sosmed?.twitter)}
+                        >
                           <IconCustom name="twitter" color="red" />
                         </IconButton>
                       </Box>
@@ -306,7 +321,9 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.linkedIn ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton onClick={() => window.open(person?.sosmed?.linkedIn)}>
+                        <IconButton
+                          onClick={() => window.open(person?.sosmed?.linkedIn)}
+                        >
                           <IconCustom name="linkedin" color="red" />
                         </IconButton>
                       </Box>
@@ -317,7 +334,9 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.twitter ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton onClick={() => window.open(person?.sosmed?.twitter)}>
+                        <IconButton
+                          onClick={() => window.open(person?.sosmed?.twitter)}
+                        >
                           <IconCustom name="twitter" color="red" />
                         </IconButton>
                       </Box>

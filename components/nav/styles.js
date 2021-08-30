@@ -9,9 +9,11 @@ const useStyles = makeStyles((theme) => ({
   route: {
     [theme.breakpoints.up("xl")]: {
       fontSize: "1vw!important",
+      marginInline: "0.5rem"
       // display: "none",
     },
     [theme.breakpoints.only("lg")]: {
+      marginInline: "0.1rem"
       // display: "none",
     },
     [theme.breakpoints.only("md")]: {
@@ -73,11 +75,12 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: 260,
     backgroundColor: "rgba(41,41,41, 0.9)",
-    color: "white"
+    color: "white",
   },
   navbarContainer: {
     display: "flex",
     alignItems: "center",
+
     [theme.breakpoints.only("sm")]: {
       paddingLeft: "6rem",
       paddingRight: "2rem",
@@ -92,8 +95,16 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: "1rem",
       justifyContent: "space-between",
     },
-    [theme.breakpoints.up("md")]: {
-      justifyContent: "space-around",
+    [theme.breakpoints.only("md")]: {
+      justifyContent: "space-evenly",
+      paddingLeft: "2rem",
+    },
+    [theme.breakpoints.only("lg")]: {
+      justifyContent: "space-evenly",
+      paddingLeft: "2rem",
+    },
+    [theme.breakpoints.up("xl")]: {
+      justifyContent: "space-evenly",
       paddingLeft: "2rem",
     },
   },

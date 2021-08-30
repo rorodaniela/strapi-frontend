@@ -7,6 +7,7 @@ import Nav from "../components/nav"
 import Footer from "../components/footer"
 import Content from "../components/philosophy"
 import menu from "../lib/collection/menu"
+import Seo from "../components/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+
 const Philosophy = ({ global, philosophy }) => {
   const classes = useStyles()
   const image = {
@@ -24,9 +26,15 @@ const Philosophy = ({ global, philosophy }) => {
     background2: getStrapiMedia(philosophy?.background2[0]),
     background1: getStrapiMedia(philosophy?.background),
   }
+  
+  const seo = {
+    siteName: "philosophy",
+    metaTitle: "Wright - Partners"
+  }
 
   return (
     <Box className={classes.root}>
+      <Seo seo={seo}/>
       <Nav categories={menu} logo={image.logo} />
       <Content philosophy={philosophy} image={image} />
       <Footer categories={menu} logo={image.logo} />

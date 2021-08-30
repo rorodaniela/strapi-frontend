@@ -372,18 +372,18 @@ function Dashboard({ homepage, image, founders }) {
         <Grid
           item
           container
+          spacing={2}
           xs={12}
           sm={10}
           md={10}
           lg={9}
           xl={9}
-          spacing={2}
           className={classes.cardFounder}
         >
           {founders?.map((person) => {
             const pict = getStrapiMedia(person.picture)
             return (
-              <Grid item xs={12} sm={3} md={3} lg={3} xl={3} key={person.id}>
+              <Grid item xs={12} sm={3} md={3} lg={3} xl={3} key={person.id} className={classes.card}>
                 <Box>
                   {/* eslint-disable-next-line */}
                   <img

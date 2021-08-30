@@ -24,6 +24,10 @@ const JobDetail = ({ global, office, jobOpportunities, careerDetail }) => {
     background1: getStrapiMedia(careerDetail?.background1),
     background2: getStrapiMedia(careerDetail?.background2),
   }
+  const seo = {
+    siteName: `Job Description | ${careerDetail?.longName}`,
+    metaTitle: "Wright - Partners",
+  }
 
   return (
     <Box className={classes.root}>

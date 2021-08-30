@@ -7,6 +7,7 @@ import Nav from "../components/nav"
 import Footer from "../components/footer"
 import Content from "../components/venture-building"
 import menu from "../lib/collection/menu"
+import Seo from "../components/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,8 +29,14 @@ const VentureBuilding = ({
     diagram: getStrapiMedia(ventureBuilding?.diagram),
   }
 
+  const seo = {
+    siteName: "Corporate Venture Building",
+    metaTitle: "Wright - Partners",
+  }
+
   return (
     <Box className={classes.root}>
+      <Seo seo={seo}/>
       <Nav categories={menu} logo={image.logo} />
       <Content
         ventureBuilding={ventureBuilding}

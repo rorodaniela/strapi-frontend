@@ -32,13 +32,14 @@ function Content({ alumniPage, image, alumni }) {
         className={classes.contentSection1}
       >
         <animated.div className={classes.orangeBox1} style={floatInFromLeft} />
-        <Box
+        {/* eslint-disable-next-line */}
+        <img
           data-aos="fade-right"
           data-aos-offset="500"
           data-aos-easing="easing-in-sine"
           data-aos-duration="1000"
           className={classes.background}
-          style={{ backgroundImage: `url(${image?.background})` }}
+          src={image?.background}
         />
         <animated.div className={classes.titleBox} style={floatInFromLeft}>
           <Typography className={classes.title1}>
@@ -70,11 +71,15 @@ function Content({ alumniPage, image, alumni }) {
             data-aos-offset="500"
             data-aos-easing="easing-in-sine"
             data-aos-duration="1000"
+            data-aos-once="true"
           >
-            <Typography className={classes.title2}>{alumniPage?.subtitle1}</Typography>
+            <Typography className={classes.title2}>
+              {alumniPage?.subtitle1}
+            </Typography>
           </Grid>
           <Grid
             item
+            container
             xs={12}
             sm={12}
             md={12}
@@ -85,18 +90,20 @@ function Content({ alumniPage, image, alumni }) {
             data-aos-offset="500"
             data-aos-easing="easing-in-sine"
             data-aos-duration="1000"
+            data-aos-once="true"
           >
             {alumni?.map((person, idx) => {
               const pict = getStrapiMedia(person.profpict)
               return (
-                <Box
+                <Grid
                   key={idx}
-                  className={classes.cardFounder}
+                  item
+                  className={classes.card}
                   xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
+                  sm={3}
+                  md={3}
+                  lg={3}
+                  xl={3}
                 >
                   <Box>
                     {/* eslint-disable-next-line */}
@@ -115,7 +122,11 @@ function Content({ alumniPage, image, alumni }) {
                     <>
                       {person?.sosmed?.linkedIn ? (
                         <Box style={{ marginRight: "2rem" }}>
-                          <IconButton onClick={() => window.open(person?.sosmed?.linkedIn)}>
+                          <IconButton
+                            onClick={() =>
+                              window.open(person?.sosmed?.linkedIn)
+                            }
+                          >
                             <IconCustom name="linkedin" color="red" />
                           </IconButton>
                         </Box>
@@ -126,7 +137,9 @@ function Content({ alumniPage, image, alumni }) {
                     <>
                       {person?.sosmed?.twitter ? (
                         <Box style={{ marginRight: "2rem" }}>
-                          <IconButton onClick={() => window.open(person?.sosmed?.twitter)}>
+                          <IconButton
+                            onClick={() => window.open(person?.sosmed?.twitter)}
+                          >
                             <IconCustom name="twitter" color="red" />
                           </IconButton>
                         </Box>
@@ -135,7 +148,7 @@ function Content({ alumniPage, image, alumni }) {
                       )}
                     </>
                   </Box>
-                </Box>
+                </Grid>
               )
             })}
           </Grid>
@@ -171,7 +184,9 @@ function Content({ alumniPage, image, alumni }) {
           xl={12}
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <Typography className={classes.quotesText}>{alumniPage?.quotes}</Typography>
+          <Typography className={classes.quotesText}>
+            {alumniPage?.quotes}
+          </Typography>
         </Grid>
         <Grid
           item

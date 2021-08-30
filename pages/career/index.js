@@ -7,6 +7,7 @@ import Nav from "../../components/nav"
 import Footer from "../../components/footer"
 import Content from "../../components/career"
 import menu from "../../lib/collection/menu"
+import Seo from "../../components/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,8 +26,14 @@ const Career = ({ global, career, office, jobOpportunities }) => {
     background2: getStrapiMedia(career?.background2),
   }
 
+  const seo = {
+    siteName: "Career",
+    metaTitle: "Wright - Partners",
+  }
+
   return (
     <Box className={classes.root}>
+      <Seo seo={seo}/>
       <Nav categories={menu} logo={image.logo} />
       <Content career={career} image={image} office={office} jobOpportunities={jobOpportunities}/>
       <Footer categories={menu} logo={image.logo} />

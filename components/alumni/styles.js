@@ -4,7 +4,21 @@ const useStyles = makeStyles((theme) => ({
   root: {
     background: "rgb(41,41,41)",
     height: "100%",
-    // paddingBottom: "10rem",
+    [theme.breakpoints.up("xl")]: {
+      // marginBottom: "-10rem",
+    },
+    [theme.breakpoints.only("lg")]: {
+      marginBottom: "-8rem",
+    },
+    [theme.breakpoints.only("md")]: {
+      // marginBottom: "-10rem",
+    },
+    [theme.breakpoints.only("sm")]: {
+      marginBottom: "-8rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "-15rem",
+    },
   },
   box: {
     width: "100%",
@@ -12,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   background: {
     position: "relative",
     backgroundSize: "cover",
+    filter: "grayscale(100%)",
     [theme.breakpoints.up("xl")]: {
       top: "-10.5vh",
       left: "-4rem",
@@ -50,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.only("lg")]: {
       marginInline: "1vw",
-      // marginTop: "2rem",
+      marginTop: "2rem",
     },
     [theme.breakpoints.only("md")]: {
       marginInline: "5vw",
@@ -74,20 +89,25 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("xl")]: {
       height: "22rem",
       bottom: "0",
+      marginTop: "-20rem",
     },
     [theme.breakpoints.only("lg")]: {
+      marginTop: "-30rem",
       height: "22rem",
       bottom: "0",
     },
     [theme.breakpoints.only("md")]: {
+      marginTop: "-20rem",
       height: "22rem",
       bottom: "0",
     },
     [theme.breakpoints.only("sm")]: {
+      marginTop: "-30rem",
       height: "22rem",
       bottom: "0",
     },
     [theme.breakpoints.down("xs")]: {
+      marginTop: "-40rem",
       height: "25rem",
       bottom: "0",
     },
@@ -503,49 +523,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     // marginTop: "3rem",
   },
-  cardFounder: {
-    [theme.breakpoints.up("xl")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "285px",
-      height: "511px",
-    },
-    [theme.breakpoints.only("lg")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "285px",
-      height: "450px",
-    },
-    [theme.breakpoints.only("md")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "238px",
-      height: "430px",
-    },
-    [theme.breakpoints.only("sm")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "175px",
-      height: "400px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "380px",
-      height: "480px",
-      marginBottom: "3rem",
-    },
-  },
   card: {
     [theme.breakpoints.up("xl")]: {
       display: "flex",
@@ -561,7 +538,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-between",
       paddingInline: "1rem",
       width: "285px",
-      height: "511px",
+      height: "470px",
     },
     [theme.breakpoints.only("md")]: {
       display: "flex",
@@ -586,43 +563,6 @@ const useStyles = makeStyles((theme) => ({
       paddingInline: "1rem",
       width: "285px",
       height: "550px",
-    },
-  },
-  cardAdvisories: {
-    [theme.breakpoints.up("xl")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "380px",
-    },
-    [theme.breakpoints.only("lg")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "380px",
-    },
-    [theme.breakpoints.only("md")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "460px",
-    },
-    [theme.breakpoints.only("sm")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "380px",
-    },
-    [theme.breakpoints.up("xs")]: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      paddingInline: "1rem",
-      width: "380px",
     },
   },
   quote: {
