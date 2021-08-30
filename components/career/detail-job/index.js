@@ -26,7 +26,7 @@ function Content({ image, office, jobOpportunities, careerDetail }) {
     name: "",
     email: "",
     phone: "",
-    // cv: null
+    cv: null
   })
 
   const floatInRight = useSpring({
@@ -56,10 +56,10 @@ function Content({ image, office, jobOpportunities, careerDetail }) {
     fileData.append("cv", form.cv)
 
     const data = {
-      name: form.name,
-      phone: form.phone,
-      email: form.email,
-      // cv: fileData,
+      // name: form.name,
+      // phone: form.phone,
+      // email: form.email,
+      fileData,
     }
 
     dispatch(applicantPost(data))

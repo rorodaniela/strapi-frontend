@@ -29,8 +29,8 @@ export default  function Footer({categories, logo}) {
     <Box container className={classes.root}>
       <Box style={{ display: "flex", alignItems: "center" }}>
         <Box>
-          {/* eslint-disable-next-line */}
           <Button onClick={() => router.push(`/`)}>
+            {/* eslint-disable-next-line */}
             <img src={logo ? logo : ''} alt="logo" className={classes.logo} />
           </Button>
         </Box>
