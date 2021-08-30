@@ -7,6 +7,7 @@ import "aos/dist/aos.css"
 // import {useRouter} from "next/router"
 import { applicantPost } from "../../../redux/actions/applicant.actions"
 import { useDispatch } from "react-redux"
+import Swal from "sweetalert2"
 
 const desc = [
   {subtitle: "subtitle1", content: "longDesc1"},
@@ -68,6 +69,12 @@ function Content({ image, office, jobOpportunities, careerDetail }) {
     // console.log("ini target : ", e.target.files[0])
     const value = e.target.files[0]
     setForm({...form, cv: value})
+    Swal(
+      "Sent Successfully!",
+      "We will contact you soon",
+      "success"
+    )
+    
   }
 
   // const goDetail = (office, job) => {

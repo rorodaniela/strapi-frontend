@@ -479,7 +479,7 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: "700",
       lineHeight: "1.15",
       letterSpacing: "0.01rem",
-      width: '90%'
+      width: "90%",
     },
   },
   content3: {
@@ -643,7 +643,7 @@ const useStyles = makeStyles((theme) => ({
   content4: {
     color: "white",
     fontFamily: ["Poppins", "sans-serif"],
-    whiteSpace: 'pre-line',
+    whiteSpace: "pre-line",
     [theme.breakpoints.up("xl")]: {
       marginTop: "0.5rem",
       fontSize: "14px",
@@ -1247,6 +1247,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     marginTop: "3rem",
   },
+  // card: {
+  //   display: "flex",
+  //   justifyContent: "space-between",
+  //   height: '500px'
+  // },
   teamBtn: {
     textTransform: "none",
     backgroundColor: "rgb(121,17,0)",

@@ -23,6 +23,7 @@ const jobMalay = [
     shortName: "CTO",
   },
 ]
+
 function Content({ career, image, office, jobOpportunities }) {
   const classes = useStyles()
   const router = useRouter()
@@ -102,7 +103,7 @@ function Content({ career, image, office, jobOpportunities }) {
           <Typography className={classes.title2}>{career?.title2}</Typography>
         </Grid>
         {jobOpportunities?.map((job) => {
-          if (job.id === 1 || job.id === 2 || job.id === 3) {
+          if (job.id === 2 || job.id === 3 || job.id === 6) {
             return (
               <Grid
                 item

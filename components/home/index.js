@@ -1,4 +1,4 @@
-import { Box, Button, Typography, Grid } from "@material-ui/core"
+import { Box, Button, Typography, Grid, IconButton } from "@material-ui/core"
 import useStyles from "./styles"
 import IconCustom from "../../src/icons"
 import { getStrapiMedia } from "../../lib/media"
@@ -6,9 +6,11 @@ import { useSpring, animated } from "react-spring"
 import { useEffect } from "react"
 import Aos from "aos"
 import "aos/dist/aos.css"
+import { useRouter } from "next/router"
 
 function Dashboard({ homepage, image, founders }) {
   const classes = useStyles()
+  const router = useRouter()
   const floatInTitle1 = useSpring({
     config: { duration: 1000 },
     to: { opacity: 1, marginLeft: 0 },
@@ -118,6 +120,7 @@ function Dashboard({ homepage, image, founders }) {
                 variant="contained"
                 color="secondary"
                 endIcon={<IconCustom name={"right-arrow"} color={"white"} />}
+                onClick={() => router.push('/venture-building')}
               >
                 Read More
               </Button>
@@ -381,24 +384,42 @@ function Dashboard({ homepage, image, founders }) {
             const pict = getStrapiMedia(person.picture)
             return (
               <Grid item xs={12} sm={3} md={3} lg={3} xl={3} key={person.id}>
-                {/* eslint-disable-next-line */}
-                <img
-                  src={pict}
-                  alt="pict-profile"
-                  className={classes.profilePict}
-                />
-                <Typography className={classes.name}>{person.name}</Typography>
-                <Typography className={classes.role}>{person.role}</Typography>
-                <Typography className={classes.desc}>
-                  {person.description}
-                </Typography>
+                <Box>
+                  {/* eslint-disable-next-line */}
+                  <img
+                    src={pict}
+                    alt="pict-profile"
+                    className={classes.profilePict}
+                  />
+                  <Typography className={classes.name}>{person.name}</Typography>
+                  <Typography className={classes.role}>{person.role}</Typography>
+                  <Typography className={classes.desc}>
+                    {person.description}
+                  </Typography>
+                </Box>
                 <Box className={classes.boxIcon}>
-                  <Box style={{ marginRight: "2rem" }}>
-                    <IconCustom name="linkedin" color="white" />
-                  </Box>
-                  <Box style={{ marginRight: "2rem" }}>
-                    <IconCustom name="twitter" color="white" />
-                  </Box>
+                  <>
+                    {
+                      person?.socialMedia?.linkedIn ? (
+                        <Box style={{ marginRight: "2rem" }}>
+                          <IconButton href={person?.socialMedia?.linkedIn}>
+                            <IconCustom name="linkedin" color="white" />
+                          </IconButton>
+                        </Box>
+                      ) : <></>
+                    }
+                  </>
+                  <>
+                    {
+                      person?.socialMedia?.twitter ? (
+                        <Box style={{ marginRight: "2rem" }}>
+                          <IconButton href={person?.socialMedia?.twitter}>
+                            <IconCustom name="twitter" color="white" />
+                          </IconButton>
+                        </Box>
+                      ) : <></>
+                    }
+                  </>
                 </Box>
               </Grid>
             )
@@ -423,6 +444,7 @@ function Dashboard({ homepage, image, founders }) {
               variant="contained"
               color="secondary"
               endIcon={<IconCustom name={"right-arrow"} color={"white"} />}
+              onClick={() => router.push('/team')}
             >
               See the full teams
             </Button>

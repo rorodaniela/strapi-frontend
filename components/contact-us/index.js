@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Button, TextField } from "@material-ui/core"
+import { Box, Typography, Grid, Button, TextField, IconButton } from "@material-ui/core"
 import useStyles from "./styles"
 import IconCustom from "../../src/icons";
 import { useSpring, animated } from "react-spring"
@@ -8,11 +8,13 @@ import "aos/dist/aos.css"
 import { getStrapiMedia } from "../../lib/media"
 import { useDispatch } from "react-redux"
 import { contactPost } from "../../redux/actions/contact.actions"
-import Map from "../Map"
+import Swal from "sweetalert2"
+// import Map from "../Map"
 
 function Content({ contactUs, image, office }) {
   const classes = useStyles()
   const dispatch = useDispatch()
+  
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -46,6 +48,7 @@ function Content({ contactUs, image, office }) {
 
   const submitForm = () => {
     dispatch(contactPost(form))
+    Swal.fire("Sent Successfully!", "Thank you for sending us your message", "success")
   }
 
   return (
@@ -79,7 +82,6 @@ function Content({ contactUs, image, office }) {
                   placeholder="Name"
                   name="name"
                   value={form.name}
-                  
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
@@ -202,7 +204,7 @@ function Content({ contactUs, image, office }) {
                 src={office?.embedMap}
                 width="250"
                 height="200"
-                style={{border: 0}}
+                style={{ border: 0 }}
                 loading="lazy"
               ></iframe>
               {/* <Map location={""} color="red" label={office?.name} /> */}
@@ -265,12 +267,14 @@ function Content({ contactUs, image, office }) {
           data-aos-duration="1500"
         >
           {/* <Box className={classes.iconBox}> */}
-          <IconCustom
-            name="linkedin"
-            color="#2963A4"
-            size={"40px"}
-            className={classes.iconBox}
-          />
+          <IconButton href={contactUs?.sosmed?.linkedIn}>
+            <IconCustom
+              name="linkedin"
+              color="#2963A4"
+              size={"40px"}
+              className={classes.iconBox}
+            />
+          </IconButton>
           {/* </Box> */}
         </Grid>
       </Grid>

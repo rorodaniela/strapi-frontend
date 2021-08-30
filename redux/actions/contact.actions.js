@@ -14,7 +14,8 @@ export const contactPost = (payload) => {
       })
       const data = await response.json()
       dispatch({
-        type: "CONTACT_POST"
+        type: "CONTACT_POST",
+        message: 'success'
       })
     } catch (error) {
       console.log(error);

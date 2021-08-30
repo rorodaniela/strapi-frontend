@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from "@material-ui/core"
+import { Box, Typography, Grid, IconButton } from "@material-ui/core"
 import useStyles from "./styles"
 import { getStrapiMedia } from "../../lib/media";
 import IconCustom from "../../src/icons";
@@ -110,12 +110,28 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                     </Typography>
                   </Box>
                   <Box className={classes.boxIcon}>
-                    <Box style={{ marginRight: "2rem" }}>
-                      <IconCustom name="linkedin" color="red" />
-                    </Box>
-                    <Box style={{ marginRight: "2rem" }}>
-                      <IconCustom name="twitter" color="red" />
-                    </Box>
+                    <>
+                      {
+                        person?.socialMedia?.linkedIn ? (
+                          <Box style={{ marginRight: "2rem" }}>
+                            <IconButton href={person?.socialMedia?.linkedIn}>
+                              <IconCustom name="linkedin" color="red" />
+                            </IconButton>
+                          </Box>
+                        ) : <></>
+                      }
+                    </>
+                    <>
+                      {
+                        person?.socialMedia?.twitter ? (
+                          <Box style={{ marginRight: "2rem" }}>
+                            <IconButton href={person?.socialMedia?.linkedIn}>
+                              <IconCustom name="twitter" color="red" />
+                            </IconButton>
+                          </Box>
+                        ) : <></>
+                      }
+                    </>
                   </Box>
                 </Box>
               )
@@ -191,12 +207,28 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   </Typography>
                 </Box>
                 <Box className={classes.boxIcon}>
-                  <Box style={{ marginRight: "2rem" }}>
-                    <IconCustom name="linkedin" color="red" />
-                  </Box>
-                  <Box style={{ marginRight: "2rem" }}>
-                    <IconCustom name="twitter" color="red" />
-                  </Box>
+                  <>
+                    {person?.sosmed?.linkedIn ? (
+                      <Box style={{ marginRight: "2rem" }}>
+                        <IconButton href={person?.sosmed?.linkedIn}>
+                          <IconCustom name="linkedin" color="red" />
+                        </IconButton>
+                      </Box>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                  <>
+                    {person?.sosmed?.twitter ? (
+                      <Box style={{ marginRight: "2rem" }}>
+                        <IconButton href={person?.sosmed?.twitter}>
+                          <IconCustom name="twitter" color="red" />
+                        </IconButton>
+                      </Box>
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 </Box>
               </Grid>
             )
@@ -271,12 +303,28 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   </Typography>
                 </Box>
                 <Box className={classes.boxIcon}>
-                  <Box style={{ marginRight: "2rem" }}>
-                    <IconCustom name="linkedin" color="red" />
-                  </Box>
-                  <Box style={{ marginRight: "2rem" }}>
-                    <IconCustom name="twitter" color="red" />
-                  </Box>
+                  <>
+                    {person?.sosmed?.linkedIn ? (
+                      <Box style={{ marginRight: "2rem" }}>
+                        <IconButton href={person?.sosmed?.linkedIn}>
+                          <IconCustom name="linkedin" color="red" />
+                        </IconButton>
+                      </Box>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                  <>
+                    {person?.sosmed?.twitter ? (
+                      <Box style={{ marginRight: "2rem" }}>
+                        <IconButton href={person?.sosmed?.twitter}>
+                          <IconCustom name="twitter" color="red" />
+                        </IconButton>
+                      </Box>
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 </Box>
               </Grid>
             )

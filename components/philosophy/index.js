@@ -1,9 +1,10 @@
 import { Box, Button, Typography, Grid } from "@material-ui/core"
 import useStyles from "./styles"
+import { useRouter } from "next/router"
 
 function Content({ philosophy, image }) {
-  console.log("ini image : ", image);
   const classes = useStyles()
+  const router = useRouter()
 
   return (
     <Grid container spacing={0} className={classes.root}>
@@ -74,6 +75,7 @@ function Content({ philosophy, image }) {
             className={classes.btnContact}
             variant="contained"
             color="secondary"
+            onClick={() => router.push('/contact-us')}
           >Contact Us</Button>
         </Grid>
       </Grid>
