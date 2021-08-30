@@ -127,7 +127,7 @@ function Content({ contactUs, image, office }) {
                   rows={5}
                   placeholder="Message"
                   name="message"
-                  value={form.name}
+                  value={form.message}
                 />
               </Grid>
             </Grid>

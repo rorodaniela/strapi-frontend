@@ -402,7 +402,7 @@ function Dashboard({ homepage, image, founders }) {
                     {
                       person?.socialMedia?.linkedIn ? (
                         <Box style={{ marginRight: "2rem" }}>
-                          <IconButton href={person?.socialMedia?.linkedIn}>
+                          <IconButton onClick={() => window.open(person?.socialMedia?.linkedIn)}>
                             <IconCustom name="linkedin" color="white" />
                           </IconButton>
                         </Box>
@@ -413,7 +413,7 @@ function Dashboard({ homepage, image, founders }) {
                     {
                       person?.socialMedia?.twitter ? (
                         <Box style={{ marginRight: "2rem" }}>
-                          <IconButton href={person?.socialMedia?.twitter}>
+                          <IconButton onClick={() => window.open(person?.socialMedia?.twitter)}>
                             <IconCustom name="twitter" color="white" />
                           </IconButton>
                         </Box>

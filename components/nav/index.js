@@ -167,9 +167,12 @@ const Nav = ({ categories, logo }) => {
       <div className={classes.toolbar} />
       <List>
         {categories?.map((category) => {
+          //  eslint-disable-next-line
           if (category?.children?.length > 0) {
+            //  eslint-disable-next-line
             return multipleListDrawer(category)
           } else {
+            //  eslint-disable-next-line
             return singleListDrawer(category)
           }
         })}

@@ -115,7 +115,7 @@ function Content({ alumniPage, image, alumni }) {
                     <>
                       {person?.sosmed?.linkedIn ? (
                         <Box style={{ marginRight: "2rem" }}>
-                          <IconButton href={person?.sosmed?.linkedIn}>
+                          <IconButton onClick={() => window.open(person?.sosmed?.linkedIn)}>
                             <IconCustom name="linkedin" color="red" />
                           </IconButton>
                         </Box>
@@ -126,7 +126,7 @@ function Content({ alumniPage, image, alumni }) {
                     <>
                       {person?.sosmed?.twitter ? (
                         <Box style={{ marginRight: "2rem" }}>
-                          <IconButton href={person?.sosmed?.twitter}>
+                          <IconButton onClick={() => window.open(person?.sosmed?.twitter)}>
                             <IconCustom name="twitter" color="red" />
                           </IconButton>
                         </Box>

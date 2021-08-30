@@ -114,7 +114,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                       {
                         person?.socialMedia?.linkedIn ? (
                           <Box style={{ marginRight: "2rem" }}>
-                            <IconButton href={person?.socialMedia?.linkedIn}>
+                            <IconButton onClick={() => window.open(person?.socialMedia?.linkedIn)}>
                               <IconCustom name="linkedin" color="red" />
                             </IconButton>
                           </Box>
@@ -125,7 +125,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                       {
                         person?.socialMedia?.twitter ? (
                           <Box style={{ marginRight: "2rem" }}>
-                            <IconButton href={person?.socialMedia?.linkedIn}>
+                            <IconButton onClick={() => window.open(person?.socialMedia?.linkedIn)}>
                               <IconCustom name="twitter" color="red" />
                             </IconButton>
                           </Box>
@@ -210,7 +210,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.linkedIn ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton href={person?.sosmed?.linkedIn}>
+                        <IconButton onClick={() => window.open(person?.sosmed?.linkedIn)}>
                           <IconCustom name="linkedin" color="red" />
                         </IconButton>
                       </Box>
@@ -221,7 +221,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.twitter ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton href={person?.sosmed?.twitter}>
+                        <IconButton onClick={() => window.open(person?.sosmed?.twitter)}>
                           <IconCustom name="twitter" color="red" />
                         </IconButton>
                       </Box>
@@ -306,7 +306,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.linkedIn ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton href={person?.sosmed?.linkedIn}>
+                        <IconButton onClick={() => window.open(person?.sosmed?.linkedIn)}>
                           <IconCustom name="linkedin" color="red" />
                         </IconButton>
                       </Box>
@@ -317,7 +317,7 @@ function Content({ team, image, squadrons, advisories, founders, venturePartners
                   <>
                     {person?.sosmed?.twitter ? (
                       <Box style={{ marginRight: "2rem" }}>
-                        <IconButton href={person?.sosmed?.twitter}>
+                        <IconButton onClick={() => window.open(person?.sosmed?.twitter)}>
                           <IconCustom name="twitter" color="red" />
                         </IconButton>
                       </Box>

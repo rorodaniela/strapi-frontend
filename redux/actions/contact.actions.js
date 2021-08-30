@@ -1,4 +1,6 @@
 import baseUrl from "../../lib/config"
+import Swal from "sweetalert2"
+
 export const contactPost = (payload) => {
   console.log("ini payload form contact: ", payload);
   return async (dispatch) => {
@@ -13,10 +15,25 @@ export const contactPost = (payload) => {
         body: JSON.stringify(payload),
       })
       const data = await response.json()
-      dispatch({
-        type: "CONTACT_POST",
-        message: 'success'
-      })
+       if (
+         data.statusCode === 400 ||
+         data.statusCode === 401 ||
+         data.statusCode === 403 ||
+         data.statusCode === 500
+       ) {
+         Swal.fire(
+           "Failed!",
+           "There was an error trying to submit form. Please try again.",
+           "error"
+         )
+         throw new Error(data)
+       } else {
+         dispatch({
+           type: "CONTACT_POST",
+         })
+         Swal.fire("Sent Successfully!", "We will contact you soon", "success")
+       }
+
     } catch (error) {
       console.log(error);
     }

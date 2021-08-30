@@ -7,7 +7,6 @@ import "aos/dist/aos.css"
 // import {useRouter} from "next/router"
 import { applicantPost } from "../../../redux/actions/applicant.actions"
 import { useDispatch } from "react-redux"
-import Swal from "sweetalert2"
 
 const desc = [
   {subtitle: "subtitle1", content: "longDesc1"},
@@ -52,34 +51,30 @@ function Content({ image, office, jobOpportunities, careerDetail }) {
   }
 
   const submitForm = () => {
-    let fileData = new FormData()
-    fileData.append("cv", form.cv)
+    const formData = new FormData()
+    formData.append(`files.cv`, form?.cv, form?.cv?.name)
 
     const data = {
-      // name: form.name,
-      // phone: form.phone,
-      // email: form.email,
-      fileData,
+      name: form?.name,
+      phone: form?.phone,
+      email: form?.email,
     }
 
-    dispatch(applicantPost(data))
+    formData.append('data', JSON.stringify(data))
+    dispatch(applicantPost(formData))
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      cv: null,
+    })
   }
 
   const handleOnchangeFile = (e) => {
-    // console.log("ini target : ", e.target.files[0])
     const value = e.target.files[0]
-    setForm({...form, cv: value})
-    Swal(
-      "Sent Successfully!",
-      "We will contact you soon",
-      "success"
-    )
-    
+    setForm({...form, cv: value})    
   }
 
-  // const goDetail = (office, job) => {
-  //   router.push(`/career/${job.id}/country/${office.id}`)
-  // }
 
   return (
     <Grid container spacing={2} className={classes.root}>
@@ -276,7 +271,9 @@ function Content({ image, office, jobOpportunities, careerDetail }) {
             <form>
               {/* eslint-disable-next-line */}
               <input
+                required
                 type="file"
+                value={form.cv}
                 onChange={(e) => handleOnchangeFile(e)}
                 style={{ color: "white" }}
               />
